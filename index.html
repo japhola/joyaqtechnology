@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOYAQ TECHNOLOGY LTD | Premium Solar & Electrical Solutions</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0B1C2C',
+                        gold: '#FDB813',
+                        blue: '#3FA9F5',
+                        light: '#FDFDFD',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Outfit"', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'marquee': 'marquee 30s linear infinite',
+                        'fade-in': 'fadeIn 0.3s ease-out forwards',
+                        'slide-up': 'slideUp 0.4s ease-out forwards',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .glow-effect { position: relative; }
+        .glow-effect::before {
+            content: ''; position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, #FDB813, #3FA9F5, #0B1C2C, #FDB813);
+            z-index: -1; filter: blur(15px); opacity: 0; transition: opacity 0.3s ease-in-out; border-radius: inherit;
+        }
+        .glow-effect:hover::before { opacity: 0.6; }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+
+        /* System Card Image Gradient Overlay */
+        .card-img-overlay {
+            background: linear-gradient(to top, rgba(11, 28, 44, 0.9) 0%, rgba(11, 28, 44, 0.2) 50%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-light text-navy font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo & Brand -->
+                <div class="flex items-center gap-3 md:gap-4">
+                    <!-- Brand Logo -->
+                    <div class="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 bg-white rounded-lg shadow-sm border border-gray-100 p-1 flex items-center justify-center overflow-hidden">
+                        <!-- Direct Google link with a robust fallback SVG if link is broken/auth-blocked -->
+                        <img src="https://lh3.google.com/u/2/d/1fASCxTEXaHFmST9-RwswVJ9eHA6frgAd=w624-h468-p-k-nu-iv1?auditContext=thumbnail" 
+                             onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdib3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik01MCAyMEw4MCA3MEgyMHoiIGZpbGw9IiNGREI4MTMiLz48cGF0aCBkPSJNNTAgMzVMMjUgODBINTB6IiBmaWxsPSIjMEIxQzJDIi8+PC9zdmc+';"
+                             alt="Joyaq Technology Logo" 
+                             class="w-full h-full object-contain">
+                    </div>
+                    <!-- Stylish Company Name -->
+                    <div class="flex flex-col justify-center">
+                        <h1 class="font-display text-xl md:text-3xl font-black tracking-tight leading-none uppercase">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-navy via-[#1a3a5a] to-blue drop-shadow-sm">JOYAQ</span>
+                            <span class="text-gold font-bold">TECHNOLOGY</span>
+                        </h1>
+                        <p class="text-[10px] md:text-xs text-navy/60 font-bold tracking-widest mt-1">RC: 8227066</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop CTA -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="https://wa.me/2347061165683?text=Hello%20JOYAQ%20TECHNOLOGY%20LTD,%20I%20would%20like%20a%20free%20consultation." 
+                       target="_blank"
+                       class="text-navy font-bold hover:text-gold transition-colors text-sm uppercase tracking-wide">Free Consultation</a>
+                    <a href="https://wa.me/2347061165683?text=Hello%20JOYAQ%20TECHNOLOGY%20LTD,%20I%20want%20to%20book%20an%20inspection." 
+                       target="_blank"
+                       class="bg-gradient-to-r from-navy to-[#152e47] text-white px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wide hover:shadow-lg hover:shadow-navy/20 hover:-translate-y-0.5 transition-all flex items-center gap-2 border border-navy/50">
+                        <i data-lucide="wrench" class="w-4 h-4"></i> Book Inspection
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-navy hover:text-gold focus:outline-none p-2 bg-gray-50 rounded-lg">
+                        <svg id="icon-menu" class="w-7 h-7 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        <svg id="icon-close" class="w-7 h-7 hidden transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Dropdown) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 shadow-xl absolute w-full left-0 top-24 origin-top transition-all">
+            <div class="px-6 py-6 space-y-4 flex flex-col">
+                <a href="https://wa.me/2347061165683?text=Hello%20JOYAQ%20TECHNOLOGY%20LTD,%20I%20would%20like%20a%20free%20consultation." target="_blank" class="w-full text-center px-4 py-4 text-sm font-bold uppercase tracking-wide text-navy bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors border border-gray-200">Free Consultation</a>
+                <a href="https://wa.me/2347061165683?text=Hello%20JOYAQ%20TECHNOLOGY%20LTD,%20I%20want%20to%20book%20an%20inspection." target="_blank" class="w-full text-center px-4 py-4 text-sm font-bold uppercase tracking-wide bg-navy text-white rounded-xl shadow-md flex justify-center items-center gap-2"><i data-lucide="wrench" class="w-4 h-4"></i> Book Inspection</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex items-center">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1509391366360-1f9509eefb58?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Solar Panels" class="w-full h-full object-cover opacity-15">
+            <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white"></div>
+        </div>
+        
+        <!-- Magic Glow Orbs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse-slow z-0"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse-slow z-0" style="animation-delay: 2s;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto reveal">
+                <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-black text-navy tracking-tight mb-6 leading-[1.1]">
+                    Powering Homes with <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-blue">Smart Energy</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto font-medium">
+                    Premium solar installations, electrical solutions, and smart power systems built for performance, safety, and long-term savings.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="https://wa.me/2347061165683?text=Hello%20JOYAQ%20TECHNOLOGY%20LTD,%20I%20would%20like%20a%20free%20consultation." 
+                       target="_blank"
+                       class="glow-effect w-full sm:w-auto bg-gold text-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-[#e5a60e] hover:-translate-y-1 transition-all shadow-lg shadow-gold/30 flex items-center justify-center gap-2">
+                        Get Free Consultation <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://wa.me/2347061165683?text=Hello%20JOYAQ%20TECHNOLOGY%20LTD,%20I%20want%20to%20book%20an%20inspection." 
+                       target="_blank"
+                       class="w-full sm:w-auto bg-white border-2 border-navy text-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-navy hover:text-white hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+                        Book an Inspection <i data-lucide="clipboard-check" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. TRUST STRIP -->
+    <section class="bg-navy py-8 relative z-20 border-y-4 border-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 items-center text-white text-sm md:text-base font-medium">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="award" class="text-gold w-6 h-6"></i>
+                    <span>Professional Installations</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i data-lucide="user-check" class="text-gold w-6 h-6"></i>
+                    <span>Certified Technicians</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i data-lucide="shield-check" class="text-gold w-6 h-6"></i>
+                    <span>Safety-Focused Systems</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i data-lucide="clock" class="text-gold w-6 h-6"></i>
+                    <span>Long-Term Reliability</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. WHAT WE OFFER (SERVICES) -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-black text-navy mb-4">What We Offer</h2>
+                <div class="w-24 h-1.5 bg-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-b-4 border-transparent hover:border-gold group reveal">
+                    <div class="w-16 h-16 bg-navy/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-300">
+                        <i data-lucide="sun" class="w-8 h-8 text-gold group-hover:text-navy transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-3">Solar Power Installation</h3>
+                    <p class="text-gray-600 leading-relaxed font-medium">High-efficiency solar panels designed to harness maximum energy and power your space sustainably.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-b-4 border-transparent hover:border-blue group reveal" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 bg-navy/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue transition-colors duration-300">
+                        <i data-lucide="zap" class="w-8 h-8 text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-3">Electrical Wiring</h3>
+                    <p class="text-gray-600 leading-relaxed font-medium">Expert domestic and industrial wiring ensuring safety, neatness, and total compliance with standards.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-b-4 border-transparent hover:border-navy group reveal" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 bg-navy/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-navy transition-colors duration-300">
+                        <i data-lucide="cctv" class="w-8 h-8 text-navy group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-3">CCTV Surveillance</h3>
+                    <p class="text-gray-600 leading-relaxed font-medium">Advanced security camera installations to monitor and protect your property 24/7 from anywhere.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-b-4 border-transparent hover:border-gold group reveal lg:col-start-2">
+                    <div class="w-16 h-16 bg-navy/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-300">
+                        <i data-lucide="battery-charging" class="w-8 h-8 text-gold group-hover:text-navy transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-3">Inverter Installation</h3>
+                    <p class="text-gray-600 leading-relaxed font-medium">Seamless inverter and battery setups providing uninterrupted power supply during grid outages.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-b-4 border-transparent hover:border-blue group reveal">
+                    <div class="w-16 h-16 bg-navy/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue transition-colors duration-300">
+                        <i data-lucide="settings" class="w-8 h-8 text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-3">Maintenance & Repairs</h3>
+                    <p class="text-gray-600 leading-relaxed font-medium">Comprehensive maintenance, fault diagnosis, and repair services for all electrical and solar systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SLIDING VALUES / PRINCIPLES SECTION -->
+    <section class="py-12 bg-white overflow-hidden border-y border-gray-100">
+        <div class="relative flex overflow-x-hidden">
+            <div class="animate-marquee whitespace-nowrap flex items-center gap-8 py-4">
+                <!-- Set 1 -->
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Industry-standard practices</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> No compromise on cable quality</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Appropriate protective devices</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Client education & training</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Honesty and transparency</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Clear expectations, no false promises</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Highly professional execution</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Customer safety is priority</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Fire extinguishers included</span>
+                <span class="text-gold pr-8">•</span>
+                
+                <!-- Set 2 (Duplicate) -->
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Industry-standard practices</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> No compromise on cable quality</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Appropriate protective devices</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Client education & training</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Honesty and transparency</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Clear expectations, no false promises</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Highly professional execution</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Customer safety is priority</span>
+                <span class="text-gold">•</span>
+                <span class="text-xl md:text-2xl font-bold text-navy flex items-center gap-3"><i data-lucide="check-circle-2" class="text-gold"></i> Fire extinguishers included</span>
+                <span class="text-gold pr-8">•</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. SYSTEM CAPACITIES -->
+    <section class="py-24 bg-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12 reveal">
+                <div>
+                    <h2 class="font-display text-4xl md:text-5xl font-black text-navy mb-4">System Capacities</h2>
+                    <p class="text-gray-600 max-w-xl text-lg font-medium">Click on any system to view details, specifications, and pricing.</p>
+                </div>
+                <div class="hidden md:flex gap-2">
+                    <button onclick="document.getElementById('systems-container').scrollBy({left: -350, behavior: 'smooth'})" class="w-12 h-12 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center hover:bg-gold hover:text-navy hover:border-gold transition-colors"><i data-lucide="chevron-left"></i></button>
+                    <button onclick="document.getElementById('systems-container').scrollBy({left: 350, behavior: 'smooth'})" class="w-12 h-12 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center hover:bg-gold hover:text-navy hover:border-gold transition-colors"><i data-lucide="chevron-right"></i></button>
+                </div>
+            </div>
+            
+            <div id="systems-container" class="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 pt-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+                <!-- Cards injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PROJECTS (IMAGES) -->
+    <section class="py-24 bg-gray-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-black text-navy mb-4">Real Projects. Real Results.</h2>
+                <div class="w-24 h-1.5 bg-blue mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto font-medium text-lg">A glimpse into our neat, professional, and standard installations across various homes and businesses.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[300px]">
+                <div class="relative rounded-3xl overflow-hidden group lg:col-span-2 lg:row-span-2 reveal shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=1200&q=80" alt="Solar Installation" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300 flex items-end p-8">
+                        <div>
+                            <div class="bg-gold text-navy text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">Residential</div>
+                            <h3 class="text-white font-bold text-3xl">Premium Solar Array Setup</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative rounded-3xl overflow-hidden group reveal shadow-lg" style="transition-delay: 100ms;">
+                    <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b6?auto=format&fit=crop&w=600&q=80" alt="Inverter Setup" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <div class="bg-blue text-white text-xs font-bold px-3 py-1 rounded-full inline-block mb-2">Inverter Systems</div>
+                            <h3 class="text-white font-bold text-xl">Clean Inverter Wiring</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative rounded-3xl overflow-hidden group reveal shadow-lg" style="transition-delay: 200ms;">
+                    <img src="https://images.unsplash.com/photo-1558442074-3c19857bc1dc?auto=format&fit=crop&w=600&q=80" alt="Electrical Panel" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <div class="bg-navy text-white text-xs font-bold border border-white/20 px-3 py-1 rounded-full inline-block mb-2">Commercial</div>
+                            <h3 class="text-white font-bold text-xl">Industrial Distribution</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CORRECTION / INSPECTION SECTION -->
+    <section class="py-24 bg-navy relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-blue/10 transform skew-x-12 translate-x-20"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 rounded-full filter blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="w-full lg:w-1/2 reveal">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-gold text-sm font-bold tracking-wide uppercase mb-6 border border-white/5">
+                        <i data-lucide="alert-triangle" class="w-4 h-4"></i> Expert Diagnosis
+                    </div>
+                    <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-[1.1]">
+                        Not Satisfied with a Previous Installation?
+                    </h2>
+                    <p class="text-gray-300 text-lg md:text-xl mb-10 leading-relaxed font-light">
+                        We inspect, diagnose, and correct faulty solar, inverter, and electrical systems installed by others. Don't let poor workmanship put your property at risk.
+                    </p>
+                    <a href="https://wa.me/2347061165683?text=Hello%20JOYAQ%20TECHNOLOGY%20LTD,%20I%20have%20a%20faulty%20installation%20and%20need%20an%20inspection." 
+                       target="_blank"
+                       class="inline-flex items-center gap-3 bg-gold text-navy px-8 py-5 rounded-full font-bold text-lg hover:bg-white hover:-translate-y-1 transition-all shadow-lg shadow-gold/20">
+                        <i data-lucide="search" class="w-6 h-6"></i> Book a Diagnostic Inspection
+                    </a>
+                </div>
+                <div class="w-full lg:w-1/2 reveal relative" style="transition-delay: 200ms;">
+                    <div class="bg-white/5 border border-white/10 p-3 rounded-3xl backdrop-blur-sm relative">
+                        <div class="absolute -top-6 -right-6 w-24 h-24 bg-blue rounded-full flex items-center justify-center flex-col text-white font-bold shadow-xl transform rotate-12 z-20 border-4 border-navy">
+                            <span class="text-2xl leading-none">100%</span>
+                            <span class="text-[10px] uppercase tracking-wider">Fixed</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" alt="Technician inspecting" class="rounded-2xl w-full h-auto object-cover mix-blend-luminosity opacity-80 hover:opacity-100 hover:mix-blend-normal transition-all duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. QUICK QUOTE FORM & 4. QUICK ACTION CHAT -->
+    <section class="py-24 bg-white relative" id="quote">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
+                <!-- Chat Action (Left) -->
+                <div class="lg:col-span-2 reveal">
+                    <h2 class="font-display text-4xl md:text-5xl font-black text-navy mb-6">Ready to Power Up?</h2>
+                    <p class="text-gray-600 mb-10 text-lg font-medium">Get a customized quote tailored to your specific energy needs, or chat with us directly for immediate assistance.</p>
+                    
+                    <div class="bg-gradient-to-br from-[#25D366]/10 to-transparent border border-[#25D366]/20 rounded-3xl p-8 mb-8 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 -mr-4 -mt-4 opacity-10 text-[#25D366]">
+                            <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.88-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-navy mb-2 relative z-10">Need immediate assistance?</h3>
+                        <p class="text-gray-700 mb-8 font-medium relative z-10">Our experts are online and ready to answer your questions.</p>
+                        <a href="https://wa.me/2347061165683" target="_blank" class="w-full bg-[#25D366] text-white px-6 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-[#20bd5a] hover:-translate-y-1 transition-all shadow-lg shadow-[#25D366]/30 relative z-10">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.88-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            Chat With Us Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quote Form (Right) -->
+                <div class="lg:col-span-3 reveal" style="transition-delay: 200ms;">
+                    <div class="bg-gray-50 p-8 md:p-12 rounded-[2rem] border border-gray-200" id="form-container">
+                        <h3 class="text-3xl font-bold text-navy mb-8">Request a Quick Quote</h3>
+                        <form id="quote-form" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-bold text-navy mb-2">Full Name</label>
+                                    <input type="text" id="fname" required class="w-full px-5 py-4 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all font-medium" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-navy mb-2">Email Address</label>
+                                    <input type="email" id="femail" class="w-full px-5 py-4 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all font-medium" placeholder="john@example.com">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-navy mb-2">Phone Number</label>
+                                    <input type="tel" id="fphone" required class="w-full px-5 py-4 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all font-medium" placeholder="08012345678">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-navy mb-2">WhatsApp Number</label>
+                                    <input type="tel" id="fwhatsapp" class="w-full px-5 py-4 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all font-medium" placeholder="08012345678">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-navy mb-2">Description</label>
+                                <textarea id="fdesc" rows="5" required class="w-full px-5 py-4 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all resize-none font-medium text-gray-700" placeholder="Describe your apartment, the appliances/load you want to power, and how long you want it to run daily..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-navy text-white py-5 rounded-xl font-bold text-lg hover:bg-blue hover:shadow-lg hover:shadow-blue/20 hover:-translate-y-1 transition-all flex justify-center items-center gap-2">
+                                Request Quote <i data-lucide="send" class="w-5 h-5"></i>
+                            </button>
+                        </form>
+                        
+                        <!-- Success Message -->
+                        <div id="form-success" class="hidden text-center py-12">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-500 shadow-inner">
+                                <i data-lucide="check" class="w-10 h-10"></i>
+                            </div>
+                            <h4 class="text-3xl font-black text-navy mb-3">Quote Requested!</h4>
+                            <p class="text-gray-600 text-lg font-medium">Preparing your customized solution. We will contact you via WhatsApp shortly.</p>
+                            <button onclick="resetForm()" class="mt-8 text-blue font-bold hover:underline">Submit another request</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. WARRANTY SECTION -->
+    <section class="py-20 bg-gradient-to-br from-[#FFFDF5] to-white border-y border-gold/20">
+        <div class="max-w-4xl mx-auto px-4 text-center reveal">
+            <div class="w-24 h-24 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-8 border border-gold/20 shadow-sm">
+                <i data-lucide="shield-check" class="w-12 h-12 text-gold"></i>
+            </div>
+            <h2 class="font-display text-3xl md:text-5xl font-black text-navy mb-6">Comprehensive Warranty Coverage</h2>
+            <p class="text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
+                All our installations come with robust warranty coverage on inverters, batteries, solar panels, and essential components — ensuring absolute peace of mind and long-term reliability for your investment.
+            </p>
+        </div>
+    </section>
+
+    <!-- 11 & 12 & 13 FOOTER -->
+    <footer class="bg-[#06121D] pt-24 pb-12 text-gray-300 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue/5 rounded-full filter blur-[100px] z-0"></div>
+        <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gold/5 rounded-full filter blur-[80px] z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+                
+                <!-- Brand -->
+                <div class="lg:col-span-4">
+                    <!-- Adjusted Footer Logo Wrapper -->
+                    <div class="bg-white p-3 rounded-2xl inline-flex items-center justify-center mb-6 w-32 h-20 shadow-lg">
+                        <img src="https://lh3.google.com/u/2/d/1fASCxTEXaHFmST9-RwswVJ9eHA6frgAd=w624-h468-p-k-nu-iv1?auditContext=thumbnail" 
+                             onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdib3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik01MCAyMEw4MCA3MEgyMHoiIGZpbGw9IiNGREI4MTMiLz48cGF0aCBkPSJNNTAgMzVMMjUgODBINTB6IiBmaWxsPSIjMEIxQzJDIi8+PC9zdmc+';"
+                             alt="Joyaq Technology Logo" 
+                             class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="font-display text-2xl font-black text-white mb-1 uppercase tracking-tight">JOYAQ TECHNOLOGY LTD.</h3>
+                    <p class="text-gold font-bold text-sm tracking-widest mb-4">RC: 8227066</p>
+                    <p class="text-gray-400 font-medium italic">Power. Precision. Trust.</p>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="lg:col-span-5">
+                    <h4 class="text-xl font-bold text-white mb-8 border-b border-white/10 pb-3 inline-block">Contact Information</h4>
+                    <div class="space-y-6">
+                        <a href="https://wa.me/2347061165683" target="_blank" class="flex items-center gap-4 text-gray-300 hover:text-gold transition-colors group">
+                            <div class="w-12 h-12 rounded-full bg-white/5 border border-white/5 flex items-center justify-center group-hover:bg-[#25D366]/20 group-hover:border-[#25D366]/30 transition-all">
+                                <i data-lucide="message-circle" class="w-5 h-5 text-[#25D366]"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">WhatsApp</p>
+                                <p class="font-bold text-white">+234 706 116 5683</p>
+                            </div>
+                        </a>
+                        <div class="flex items-center gap-4 text-gray-300">
+                            <div class="w-12 h-12 rounded-full bg-white/5 border border-white/5 flex items-center justify-center">
+                                <i data-lucide="phone" class="w-5 h-5 text-blue"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">Call Us</p>
+                                <p class="font-bold text-white">
+                                    <a href="tel:+2347017262660" class="hover:text-gold transition-colors">+234 701 726 2660</a> <span class="text-gray-600 px-2 font-normal">|</span> 
+                                    <a href="tel:+2349020212088" class="hover:text-gold transition-colors">+234 902 021 2088</a>
+                                </p>
+                            </div>
+                        </div>
+                        <a href="mailto:joyaqtechnology@gmail.com" class="flex items-center gap-4 text-gray-300 hover:text-gold transition-colors group">
+                            <div class="w-12 h-12 rounded-full bg-white/5 border border-white/5 flex items-center justify-center group-hover:bg-gold/20 group-hover:border-gold/30 transition-all">
+                                <i data-lucide="mail" class="w-5 h-5 text-gold"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">Email</p>
+                                <p class="font-bold text-white">joyaqtechnology@gmail.com</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="lg:col-span-3">
+                    <h4 class="text-xl font-bold text-white mb-8 border-b border-white/10 pb-3 inline-block">Connect With Us</h4>
+                    <div class="flex flex-wrap gap-4">
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/joyaqtechnology" target="_blank" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#1877F2] hover:border-transparent transition-all hover:-translate-y-1 shadow-lg">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z"/></svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/JoyaqTechnology/" target="_blank" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:border-transparent transition-all hover:-translate-y-1 shadow-lg">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7ZM9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12Z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3 8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8ZM8 5H16C17.6569 5 19 6.34315 19 8V16C19 17.6569 17.6569 19 16 19H8C6.34315 19 5 17.6569 5 16V8C5 6.34315 6.34315 5 8 5Z"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+                        </a>
+                        <!-- X (Twitter) -->
+                        <a href="https://x.com/JoyaqTechnology" target="_blank" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black hover:border-transparent transition-all hover:-translate-y-1 shadow-lg">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@joyaqtechnology" target="_blank" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-black hover:border-transparent transition-all hover:-translate-y-1 shadow-lg">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                        </a>
+                    </div>
+                    <div class="mt-6 space-y-1 text-sm font-medium text-gray-400">
+                        <p>@joyaqtechnology</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm font-medium text-gray-500">
+                <p>&copy; 2026 JOYAQ TECHNOLOGY LTD. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Built with Precision.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================== -->
+    <!-- MODAL OVERLAY FOR SYSTEM DETAILS (VIRTUAL PAGE) -->
+    <!-- ============================================== -->
+    <div id="system-modal" class="fixed inset-0 z-[100] hidden bg-navy/95 backdrop-blur-md overflow-y-auto">
+        <div class="min-h-screen px-4 py-12 md:py-20 flex items-center justify-center">
+            <div class="bg-white w-full max-w-5xl rounded-[2rem] overflow-hidden shadow-2xl relative animate-slide-up flex flex-col md:flex-row">
+                
+                <!-- Close Button -->
+                <button onclick="closeModal()" class="absolute top-4 right-4 md:top-6 md:right-6 z-10 w-12 h-12 bg-white/50 backdrop-blur-sm hover:bg-navy hover:text-white rounded-full flex items-center justify-center transition-colors border border-gray-200">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+
+                <!-- Modal Image Area -->
+                <div class="w-full md:w-1/2 h-[300px] md:h-auto relative bg-gray-100">
+                    <img id="modal-img" src="" alt="System Image" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <span class="bg-gold text-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">System Capacity</span>
+                        <h2 id="modal-kw-display" class="font-display text-5xl font-black mt-2 drop-shadow-md"></h2>
+                    </div>
+                </div>
+
+                <!-- Modal Details Area -->
+                <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                    <h3 id="modal-title" class="font-display text-2xl md:text-3xl font-black text-navy mb-4 leading-tight"></h3>
+                    <div class="w-16 h-1.5 bg-blue rounded-full mb-6"></div>
+                    
+                    <p class="text-gray-600 mb-8 font-medium text-lg leading-relaxed">This complete package includes top-tier components properly sized to guarantee reliable power for your specific needs, installed with our signature neatness and safety standards.</p>
+                    
+                    <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6 mb-8">
+                        <p class="text-sm text-gray-500 uppercase tracking-widest font-bold mb-1">Estimated Price</p>
+                        <p id="modal-price" class="font-display text-4xl font-black text-navy"></p>
+                    </div>
+
+                    <a id="modal-cta" href="#" target="_blank" class="w-full bg-[#25D366] text-white px-8 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-[#20bd5a] hover:-translate-y-1 transition-all shadow-lg shadow-[#25D366]/30">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.88-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        Get This System
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.replace('h-24', 'h-20');
+                navbar.classList.add('shadow-sm');
+            } else {
+                navbar.classList.replace('h-20', 'h-24');
+                navbar.classList.remove('shadow-sm');
+            }
+        });
+
+        // Mobile Menu Toggle Fix
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconMenu = document.getElementById('icon-menu');
+        const iconClose = document.getElementById('icon-close');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if(mobileMenu.classList.contains('hidden')) {
+                iconMenu.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            } else {
+                iconMenu.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+            }
+        });
+
+        // Data for Systems
+        const systems = [
+            { id: 'sys1', kw: '1.3kW', title: '1.3kw Inverter with 2.5kwh LiFePO4 battery & 1.2kwp Solar power', price: '₦1,200,000', img: 'https://drive.google.com/uc?export=view&id=1cNIjjPyKoBXvKeUhpYTgwCm60QZhSULa' },
+            { id: 'sys2', kw: '1.5kW', title: '1.5kw Inverter with 2.5kwh LiFePO4 battery & 1.5kwp Solar power', price: '₦1,400,000', img: 'https://drive.google.com/uc?export=view&id=1ZVRoYShVOAQtkCXpOheeHRa06l_MeIB8' },
+            { id: 'sys3', kw: '3kW', title: '3kw Inverter with 5kwh LiFePO4 battery & 3kwp Solar power', price: '₦2,500,000', img: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=600&q=80' },
+            { id: 'sys4', kw: '5kW', title: '5kw Inverter with 10kwh LiFePO4 battery & 5kwp Solar power', price: '₦3,800,000', img: 'https://drive.google.com/uc?export=view&id=1avuLH542RDud6gje0cVujzOkSit26KbE' },
+            { id: 'sys5', kw: '6kW', title: '6kw Inverter with 10kwh LiFePO4 battery & 6kwp Solar power', price: '₦4,500,000', img: 'https://images.unsplash.com/photo-1559302504-64aae6ca6b6f?auto=format&fit=crop&w=600&q=80' },
+            { id: 'sys6', kw: '8kW', title: '8kw Inverter with 15kwh LiFePO4 battery & 8kwp Solar power', price: '₦5,800,000', img: 'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=600&q=80' },
+            { id: 'sys7', kw: '11kW', title: '11kw Inverter with 20kwh LiFePO4 battery & 11kwp Solar power', price: '₦7,500,000', img: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b6?auto=format&fit=crop&w=600&q=80' },
+            { id: 'sys8', kw: '12kW', title: '12kw Inverter with 25kwh LiFePO4 battery & 12kwp Solar power', price: '₦8,500,000', img: 'https://drive.google.com/uc?export=view&id=1FS-KsvceAAxh4w6xjsEQwtF1d9H-LroZ' },
+            { id: 'sys9', kw: '20kW', title: '20kw Inverter with 40kwh LiFePO4 battery & 20kwp Solar power', price: '₦14,000,000', img: 'https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=600&q=80' },
+            { id: 'sys10', kw: '24kW', title: '24kw Inverter with 50kwh LiFePO4 battery & 24kwp Solar power', price: '₦16,500,000', img: 'https://drive.google.com/uc?export=view&id=1ClTYN0OIaQFfsBGzG5vvfD46FfL3iXde' },
+            { id: 'sys11', kw: '36kW', title: '36kw Inverter with 70kwh LiFePO4 battery & 36kwp Solar power', price: '₦24,000,000', img: 'https://images.unsplash.com/photo-1558442074-3c19857bc1dc?auto=format&fit=crop&w=600&q=80' },
+            { id: 'sys12', kw: '50kW', title: '50kw Inverter with 100kwh LiFePO4 battery & 50kwp Solar power', price: '₦35,000,000', img: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=600&q=80' }
+        ];
+
+        // Inject Systems into DOM
+        const container = document.getElementById('systems-container');
+        systems.forEach(sys => {
+            container.innerHTML += `
+                <div class="snap-start shrink-0 w-[280px] md:w-[320px] bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer" onclick="openModal('${sys.id}')">
+                    <div class="h-56 relative overflow-hidden bg-gray-100">
+                        <img src="${sys.img}" alt="${sys.kw} System" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 card-img-overlay opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                        <h3 class="absolute bottom-4 left-5 text-4xl font-black text-white font-display drop-shadow-md">${sys.kw}</h3>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md rounded-full w-10 h-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-base font-bold text-navy mb-2 line-clamp-3 leading-snug">${sys.title}</h4>
+                        <div class="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <span class="text-sm font-bold text-blue uppercase tracking-wider">View Details</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        // re-init icons for newly added HTML
+        lucide.createIcons();
+
+        // Modal Logic
+        const modal = document.getElementById('system-modal');
+        
+        function openModal(sysId) {
+            const sys = systems.find(s => s.id === sysId);
+            if(!sys) return;
+            
+            document.getElementById('modal-title').innerText = sys.title;
+            document.getElementById('modal-kw-display').innerText = sys.kw;
+            document.getElementById('modal-price').innerText = sys.price;
+            document.getElementById('modal-img').src = sys.img;
+            
+            const msg = `Hello JOYAQ TECHNOLOGY LTD,%0A%0AI am interested in getting the ${sys.title} priced at ${sys.price}. Please provide more details.`;
+            document.getElementById('modal-cta').href = `https://wa.me/2347061165683?text=${msg}`;
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scroll
+        }
+
+        // Close modal on outside click
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Scroll Animations (Intersection Observer)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form Submission
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('fname').value;
+            const desc = document.getElementById('fdesc').value;
+            const msg = `Hello JOYAQ TECHNOLOGY LTD,%0A%0AMy name is ${name}. I am requesting a quote.%0A%0ADetails:%0A${desc}`;
+            const whatsappUrl = `https://wa.me/2347061165683?text=${msg}`;
+            
+            this.classList.add('hidden');
+            document.getElementById('form-success').classList.remove('hidden');
+            
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+            }, 1000);
+        });
+
+        function resetForm() {
+            document.getElementById('quote-form').reset();
+            document.getElementById('quote-form').classList.remove('hidden');
+            document.getElementById('form-success').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
