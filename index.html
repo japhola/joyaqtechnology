@@ -88,7 +88,12 @@
                 <!-- Logo & Brand -->
                 <div class="flex items-center gap-3 md:gap-4">
                     <!-- Brand Logo -->
-                    <div class="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 bg-white rounded-lg shadow-sm border border-gray-100 p-1 flex items-center justify-center overflow-hidden">
+                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo & Brand -->
+                <div class="flex items-center gap-3 md:gap-4">
+                    <!-- Brand Logo -->
+                    <div class="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 flex items-center justify-center overflow-hidden">
                         <!-- Direct Google link with a robust fallback SVG if link is broken/auth-blocked -->
                         <img src="images/logo.png" 
                              onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdib3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik01MCAyMEw4MCA3MEgyMHoiIGZpbGw9IiNGREI4MTMiLz48cGF0aCBkPSJNNTAgMzVMMjUgODBINTB6IiBmaWxsPSIjMEIxQzJDIi8+PC9zdmc+';"
@@ -485,7 +490,9 @@
                 <!-- Brand -->
                 <div class="lg:col-span-4">
                     <!-- Adjusted Footer Logo Wrapper -->
-                    <div class="bg-white p-3 rounded-2xl inline-flex items-center justify-center mb-6 w-32 h-20 shadow-lg">
+                    <div class="lg:col-span-4">
+                    <!-- Adjusted Footer Logo Wrapper -->
+                    <div class="inline-flex items-center justify-center mb-6 w-32 h-20">
                         <img src="images/logo.png" 
                              onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdib3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik01MCAyMEw4MCA3MEgyMHoiIGZpbGw9IiNGREI4MTMiLz48cGF0aCBkPSJNNTAgMzVMMjUgODBINTB6IiBmaWxsPSIjMEIxQzJDIi8+PC9zdmc+';"
                              alt="Joyaq Technology Logo" 
@@ -580,10 +587,10 @@
                 </button>
 
                 <!-- Modal Image Area -->
-                <div class="w-full md:w-1/2 h-[300px] md:h-auto relative bg-gray-100">
-                    <img id="modal-img" src="" alt="System Image" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 text-white">
+                <div class="w-full md:w-1/2 h-[300px] md:h-auto relative bg-[#0B1C2C] flex items-center justify-center">
+                    <img id="modal-img" src="" alt="System Image" class="absolute inset-0 w-full h-full object-contain p-4">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent pointer-events-none"></div>
+                    <div class="absolute bottom-6 left-6 text-white z-10">
                         <span class="bg-gold text-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">System Capacity</span>
                         <h2 id="modal-kw-display" class="font-display text-5xl font-black mt-2 drop-shadow-md"></h2>
                     </div>
@@ -665,11 +672,11 @@
         systems.forEach(sys => {
             container.innerHTML += `
                 <div class="snap-start shrink-0 w-[280px] md:w-[320px] bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer" onclick="openModal('${sys.id}')">
-                    <div class="h-56 relative overflow-hidden bg-gray-100">
-                        <img src="${sys.img}" alt="${sys.kw} System" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 card-img-overlay opacity-80 group-hover:opacity-100 transition-opacity"></div>
-                        <h3 class="absolute bottom-4 left-5 text-4xl font-black text-white font-display drop-shadow-md">${sys.kw}</h3>
-                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md rounded-full w-10 h-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
+                    <div class="h-56 relative overflow-hidden bg-gray-100 flex items-center justify-center">
+                        <img src="${sys.img}" alt="${sys.kw} System" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 card-img-overlay opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                        <h3 class="absolute bottom-4 left-5 text-4xl font-black text-white font-display drop-shadow-md z-10">${sys.kw}</h3>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md rounded-full w-10 h-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0 z-10">
                             <i data-lucide="arrow-up-right" class="w-5 h-5 text-white"></i>
                         </div>
                     </div>
