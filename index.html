@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOYAQ TECHNOLOGY LTD | Premium Solar & Electrical Solutions</title>
+    <meta name="description" content="JOYAQ TECHNOLOGY LTD provides premium solar installations, inverter systems, electrical wiring and CCTV in Nigeria. Get a free consultation and inspection.">
+    <link rel="icon" type="image/png" href="images/logo.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +27,7 @@
                         navy: '#0B1C2C',
                         gold: '#FDB813',
                         blue: '#3FA9F5',
-                        light: '#FDFDFD',
+                        light: '#FDFD',
                     },
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
@@ -77,6 +79,7 @@
         .card-img-overlay {
             background: linear-gradient(to top, rgba(11, 28, 44, 0.9) 0%, rgba(11, 28, 44, 0.2) 50%, transparent 100%);
         }
+        section { scroll-margin-top: 96px; }
     </style>
 </head>
 <body class="bg-light text-navy font-sans antialiased overflow-x-hidden">
@@ -84,11 +87,6 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-40 glass transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-24">
-                <!-- Logo & Brand -->
-                <div class="flex items-center gap-3 md:gap-4">
-                    <!-- Brand Logo -->
-                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
                 <!-- Logo & Brand -->
                 <div class="flex items-center gap-3 md:gap-4">
@@ -124,7 +122,7 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-navy hover:text-gold focus:outline-none p-2 bg-gray-50 rounded-lg">
+                    <button id="mobile-menu-btn" aria-label="Toggle menu" class="text-navy hover:text-gold focus:outline-none p-2 bg-gray-50 rounded-lg">
                         <svg id="icon-menu" class="w-7 h-7 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                         <svg id="icon-close" class="w-7 h-7 hidden transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                     </button>
@@ -145,7 +143,7 @@
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex items-center">
         <!-- Background Elements -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1509391366360-1f9509eefb58?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Solar Panels" class="w-full h-full object-cover opacity-15">
+            <img src="https://images.unsplash.com/photo-1509391366360-1f9509eefb58?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" loading="lazy" width="600" height="400" alt="Solar Panels" class="w-full h-full object-cover opacity-15">
             <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white"></div>
         </div>
         
@@ -350,7 +348,7 @@
                             <span class="text-2xl leading-none">100%</span>
                             <span class="text-[10px] uppercase tracking-wider">Fixed</span>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" alt="Technician inspecting" class="rounded-2xl w-full h-auto object-cover mix-blend-luminosity opacity-80 hover:opacity-100 hover:mix-blend-normal transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" alt="Technician inspecting" loading="lazy" class="rounded-2xl w-full h-auto object-cover mix-blend-luminosity opacity-80 hover:opacity-100 hover:mix-blend-normal transition-all duration-500">
                     </div>
                 </div>
             </div>
@@ -449,8 +447,6 @@
                 
                 <!-- Brand -->
                 <div class="lg:col-span-4">
-                    <!-- Adjusted Footer Logo Wrapper -->
-                    <div class="lg:col-span-4">
                     <!-- Adjusted Footer Logo Wrapper -->
                     <div class="inline-flex items-center justify-center mb-6 w-32 h-20">
                         <img src="images/logo.png" 
